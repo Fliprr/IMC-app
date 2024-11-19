@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMC Fácil</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    input {
+      width: calc(100% - 20px);
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      width: 100%;
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .history-section {
+      margin-top: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: #f9f9f9;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    th {
+      background: #007BFF;
+      color: white;
+      text-align: left;
+      padding: 10px;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: #f4f4f9;
+    }
+
+    tbody tr:hover {
+      background: #e2e6ea;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>IMC Fácil</h1>
+    <form id="imcForm">
+      <label>
+        Nome:
+        <input type="text" id="name" placeholder="Digite seu nome" required>
+      </label>
+      <label>
+        Peso (kg):
+        <input type="number" id="weight" step="0.1" placeholder="Digite seu peso" required>
+      </label>
+      <label>
+        Altura (m):
+        <input type="number" id="height" step="0.01" placeholder="Digite sua altura" required>
+      </label>
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div class="history-section">
+      <h2>Histórico</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Peso</th>
+            <th>Altura</th>
+            <th>IMC</th>
+            <th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="historyTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
